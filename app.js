@@ -59,7 +59,7 @@ app.get("/api", (req, res) => {
           client.close();
       });
       });
-  }) 
+  });
 
     
 // app.post("/track", (req, res) => {
