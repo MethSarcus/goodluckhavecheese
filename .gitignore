@@ -7,6 +7,7 @@ cheesetracker/node_modules
 ./client/c
 ./client/.pnp
 ./client/.pnp.js
+./node_modules
 
 # testing
 ./client/coverage
