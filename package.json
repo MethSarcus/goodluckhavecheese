@@ -2,7 +2,7 @@
   "name": "goodluckhavecheese",
   "scripts": {
     "start": "cd ./server && node app.js",
-    "heroku-postbuild": "cd ../client && npm install && npm run build && npm install -g serve && serve -s build"
+    "heroku-postbuild": "cd ./client && npm install && npm run build && npm install -g serve && serve -s build"
   },
   "version": "1.0.0",
   "description": "for tracking those cheesy mofos",
