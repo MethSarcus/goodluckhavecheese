@@ -4,23 +4,23 @@ node_modules/
 
 # dependencies
 cheesetracker/node_modules
-./cheesetracker/c
-./cheesetracker/.pnp
-./cheesetracker/.pnp.js
+./client/c
+./client/.pnp
+./client/.pnp.js
 
 # testing
-./cheesetracker/coverage
+./client/coverage
 
 # production
-./cheesetracker/build
+./client/build
 
 # misc
-./cheesetracker/.DS_Store
-./cheesetracker/.env.local
-./cheesetracker/.env.development.local
-./cheesetracker/.env.test.local
-./cheesetracker/.env.production.local
+./client/.DS_Store
+./client/.env.local
+./client/.env.development.local
+./client/.env.test.local
+./client/.env.production.local
 
-./cheesetracker/npm-debug.log*
-./cheesetracker/yarn-debug.log*
-./cheesetracker/yarn-error.log*
+./client/npm-debug.log*
+./client/yarn-debug.log*
+./client/yarn-error.log*
