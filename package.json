@@ -1,0 +1,6 @@
+{
+  "name": "goodluckhavecheese",
+  "scripts": {
+    "start": "cd ./server && node app.js"
+  }
+}
