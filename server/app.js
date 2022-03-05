@@ -7,10 +7,6 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
 app.use(cors());
 
 const PORT = process.env.PORT || 8080;
@@ -65,7 +61,9 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 //     client.close();
 // });
 
-
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "/client/build", "index.html"));
+});
 
 
 
