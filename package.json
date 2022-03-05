@@ -1,8 +1,9 @@
 {
   "name": "goodluckhavecheese",
   "scripts": {
-    "start": "cd ./server && node app.js",
-    "heroku-postbuild": "cd ./client && npm install && npm run build"
+    "heroku-prebuild": "cd ./client && npm install && npm run build",
+    "start": "cd ./server && node app.js"
+    
   },
   "version": "1.0.0",
   "description": "for tracking those cheesy mofos",
