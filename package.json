@@ -2,7 +2,7 @@
   "name": "goodluckhavecheese",
   "scripts": {
     "heroku-prebuild": "cd ./client && npm install && npm run build",
-    "start": "cd ./server && node app.js"
+    "start": "cd ./server && npm install && node app.js"
     
   },
   "version": "1.0.0",
