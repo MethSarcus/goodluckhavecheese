@@ -6,11 +6,9 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-app.use(express.static(path.resolve(__dirname, "./client/build")));
+app.use(express.static(path.resolve(__dirname, "./client/build/")));
 
 app.use(cors());
-
-const testData = {race: "protoss", glhf: false, cheese: true};
 
 const PORT = process.env.PORT || 8080;
   

@@ -6,7 +6,7 @@
   },
   "version": "1.0.0",
   "description": "for tracking those cheesy mofos",
-  "main": "./client/build/",
+  "main": "./server/app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MethSarcus/cheese-tracker.git"
