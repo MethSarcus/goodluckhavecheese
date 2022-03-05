@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "./cheesetracker/build",
     "ignore": [
       "firebase.json",
       "**/.*",
