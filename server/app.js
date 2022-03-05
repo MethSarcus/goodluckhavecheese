@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path');
 var cors = require('cors');
 const app = express();
 app.use(express.json());
@@ -6,7 +7,9 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-app.use(express.static(path.resolve(__dirname, "./client/build/")));
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.use(cors());
 
@@ -19,18 +22,18 @@ const uri = "mongodb+srv://methsarcus:LC25g9IwqrE2r1mM@cheesestats.vtr92.mongodb
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Handle GET requests to /api route
-app.get("/api", (req, res) => {
-    client.connect(err => {
-        const collection = client.db("cheeseDB").collection("stats");
-        // perform actions on the collection object
-        collection.insertOne(testData, (err, data) => {
-          if(err) return console.log(err);
-          res.send(('saved to db: ' + data));
-          client.close();
-      });
-      });
-    //res.json({ message: "Hello from server!" });
-  });
+// app.get("/api", (req, res) => {
+//     client.connect(err => {
+//         const collection = client.db("cheeseDB").collection("stats");
+//         // perform actions on the collection object
+//         collection.insertOne(testData, (err, data) => {
+//           if(err) return console.log(err);
+//           res.send(('saved to db: ' + data));
+//           client.close();
+//       });
+//       });
+//     //res.json({ message: "Hello from server!" });
+//   });
 
   app.post('/', (req, res) => {
       let race = req.body.race;
