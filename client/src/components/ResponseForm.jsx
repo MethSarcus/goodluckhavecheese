@@ -67,6 +67,8 @@ class ResponseForm extends React.Component {
     }).then(function (response) {
       if (response.acknowledged) {
         alert("Data submitted");
+      } else {
+        alert("Error making request");
       }
     });
 
