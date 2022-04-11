@@ -36,19 +36,7 @@ class ResponseForm extends React.Component {
   }
 
   getCurrentState() {
-    console.log(this.state.value);
     return this.state;
-  }
-
-  sendForm() {
-    this.sendFormResponse().then(function(response) {
-      console.log(response);
-      if (response.acknowledged) {
-        alert("Data submitted");
-      } else {
-        alert("Error making request");
-      }
-    });
   }
 
   sendFormResponse() {
@@ -72,19 +60,20 @@ class ResponseForm extends React.Component {
       body: JSON.stringify(data), // body data type must match "Content-Type" header
     };
 
-    return fetch("/", requestOptions).then(function (response) {
-      return response.json();
+    fetch("/", requestOptions).then(function (response) {
+      if (response.ok) {
+        return response.json();
+      } else {
+        alert("Issue making request");
+        return;
+      }  
     }).then(function (response) {
-      return response;
-      // if (response.acknowledged) {
-      //   alert("Data submitted");
-      // } else {
-      //   alert("Error making request");
-      //   console.log(response);
-      // }
+      if (response.acknowledged) {
+        alert("Data submitted");
+      } else {
+        alert("Error inserting data");
+      }
     });
-
-
   }
 
   render() {
@@ -112,7 +101,7 @@ class ResponseForm extends React.Component {
         </Grid>
 
         <Grid container item xs={4} justifyContent="center">
-          <Button variant="contained" onClick={this.sendForm}>
+          <Button variant="contained" onClick={this.sendFormResponse}>
             Submit
           </Button>
         </Grid>
