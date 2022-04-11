@@ -40,6 +40,17 @@ class ResponseForm extends React.Component {
     return this.state;
   }
 
+  sendForm() {
+    this.sendFormResponse().then(function(response) {
+      console.log(response);
+      if (response.acknowledged) {
+        alert("Data submitted");
+      } else {
+        alert("Error making request");
+      }
+    });
+  }
+
   sendFormResponse() {
     var data = this.getCurrentState();
 
@@ -61,16 +72,16 @@ class ResponseForm extends React.Component {
       body: JSON.stringify(data), // body data type must match "Content-Type" header
     };
 
-    fetch("/", requestOptions).finally(function (response) {
-
+    return fetch("/", requestOptions).then(function (response) {
       return response.json();
-    }).finally(function (response) {
-      if (response.acknowledged) {
-        alert("Data submitted");
-      } else {
-        alert("Error making request");
-        console.log(response);
-      }
+    }).then(function (response) {
+      return response;
+      // if (response.acknowledged) {
+      //   alert("Data submitted");
+      // } else {
+      //   alert("Error making request");
+      //   console.log(response);
+      // }
     });
 
 
