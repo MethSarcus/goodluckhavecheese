@@ -112,7 +112,7 @@ class ResponseForm extends React.Component {
         </Grid>
 
         <Grid container item xs={4} justifyContent="center">
-          <Button variant="contained" onClick={this.sendFormResponse}>
+          <Button variant="contained" onClick={this.sendForm}>
             Submit
           </Button>
         </Grid>
