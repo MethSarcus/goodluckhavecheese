@@ -64,7 +64,7 @@ class ResponseForm extends React.Component {
     fetch("/", requestOptions).then(function (response) {
 
       return response.json();
-    }).then(function (response) {
+    }).finally(function (response) {
       if (response.acknowledged) {
         alert("Data submitted");
       } else {
