@@ -69,9 +69,8 @@ class ResponseForm extends React.Component {
       }  
     }).then(function (response) {
       if (response.acknowledged) {
-        alert("Your response has been recorded").then(function() {
-          window.location.reload(false);
-        });
+        alert("Your response has been recorded");
+        window.location.reload(false);
       } else {
         alert("Error inserting data");
       }
