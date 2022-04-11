@@ -51,22 +51,30 @@ const uri = "mongodb+srv://methsarcus:LC25g9IwqrE2r1mM@cheesestats.vtr92.mongodb
 //     //res.json({ message: "Hello from server!" });
 //   });
 
+  // app.post('/', (req, res) => {
+  //     let race = req.body.race;
+  //     let glhf = req.body.glhf;
+  //     let cheese = req.body.cheese;
+  //     let dataToInsert = {race: race, glhf: glhf, cheese: cheese};
+  //     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+  //     client.connect(err => {
+  //       const collection = client.db("cheeseDB").collection("stats");
+  //       // perform actions on the collection object
+  //       collection.insertOne(dataToInsert, (err, data) => {
+  //         if(err) return console.log(err);
+  //         res.send(data);
+  //         client.close();
+  //     });
+  //     });
+  // });
+
   app.post('/', (req, res) => {
-      let race = req.body.race;
-      let glhf = req.body.glhf;
-      let cheese = req.body.cheese;
-      let dataToInsert = {race: race, glhf: glhf, cheese: cheese};
-      const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-      client.connect(err => {
-        const collection = client.db("cheeseDB").collection("stats");
-        // perform actions on the collection object
-        collection.insertOne(dataToInsert, (err, data) => {
-          if(err) return console.log(err);
-          res.send(data);
-          client.close();
-      });
-      });
-  });
+    let race = req.body.race;
+    let glhf = req.body.glhf;
+    let cheese = req.body.cheese;
+    let dataToInsert = {race: race, glhf: glhf, cheese: cheese};
+    res.send(dataToInsert);
+});
 
 // client.connect(err => {
 //     const collection = client.db("cheeseDB").collection("stats");
