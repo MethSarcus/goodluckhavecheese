@@ -61,7 +61,7 @@ class ResponseForm extends React.Component {
       body: JSON.stringify(data), // body data type must match "Content-Type" header
     };
 
-    fetch("/", requestOptions).then(function (response) {
+    fetch("/", requestOptions).finally(function (response) {
 
       return response.json();
     }).finally(function (response) {
