@@ -37,15 +37,15 @@ app.listen(PORT, console.log(`Server started on port ${PORT}`));
 const { MongoClient } = require('mongodb');
 const uri = "mongodb+srv://methsarcus:LC25g9IwqrE2r1mM@cheesestats.vtr92.mongodb.net/CheeseStats?retryWrites=true&w=majority";
 
-  app.post('/', body('race').isString(), body('glhf').isBoolean(), body('cheese').isBoolean(), (req, res) => {
+  app.post('/', body('race').isString(), body('glhf').isBoolean().toBoolean(), body('cheese').isBoolean().toBoolean(), (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
 
       let race = req.body.race;
-      let glhf = parseBoolean(req.body.glhf);
-      let cheese = parseBoolean(req.body.cheese);
+      let glhf = req.body.glhf;
+      let cheese = req.body.cheese;
       
       let dataToInsert = {race: race, glhf: glhf, cheese: cheese};
       const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
