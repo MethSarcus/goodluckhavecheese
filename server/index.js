@@ -44,8 +44,8 @@ const uri = "mongodb+srv://methsarcus:LC25g9IwqrE2r1mM@cheesestats.vtr92.mongodb
     }
 
       let race = req.body.race;
-      let glhf = req.body.glhf;
-      let cheese = req.body.cheese;
+      let glhf = parseBoolean(req.body.glhf);
+      let cheese = parseBoolean(req.body.cheese);
       
       let dataToInsert = {race: race, glhf: glhf, cheese: cheese};
       const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
