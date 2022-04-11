@@ -35,6 +35,12 @@ class ResponseForm extends React.Component {
     this.setState({ cheese: cheese });
   }
 
+  resetForm() {
+    this.setState({ race: null });
+    this.setState({ glhf: null });
+    this.setState({ cheese: null });
+  }
+
   getCurrentState() {
     return this.state;
   }
@@ -69,7 +75,8 @@ class ResponseForm extends React.Component {
       }  
     }).then(function (response) {
       if (response.acknowledged) {
-        alert("Data submitted");
+        alert("Your response has been recorded");
+        this.resetForm();
       } else {
         alert("Error inserting data");
       }
