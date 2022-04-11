@@ -1,7 +1,7 @@
 {
   "name": "goodluckhavecheese",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pet project for tracking how reliable it is to predict cheese based on if an opponent glhf's",
   "main": "index.js",
   "proxy": "http://localhost:3000",
   "scripts": {
