@@ -69,6 +69,7 @@ class ResponseForm extends React.Component {
         alert("Data submitted");
       } else {
         alert("Error making request");
+        console.log(response);
       }
     });
 
